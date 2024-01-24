@@ -17,10 +17,16 @@ public class Compactador {
         for (int i = 0; i < entrada.length(); i++) {
             if (i < entrada.length() - 1 && entrada.charAt(i) == entrada.charAt(i + 1)) {
                 ocorrencias++;
-            } else {
+            }/*else if(entrada.charAt(i) == '\n') { // substituir \n por LP
+                comprimido.append(ocorrencias);
+                comprimido.append('L');
+                comprimido.append('P');
+                ocorrencias = 1; // reseta counter
+            } */
+            else {
                 comprimido.append(ocorrencias);
                 comprimido.append(entrada.charAt(i));
-                ocorrencias = 1; // reseta a 
+                ocorrencias = 1; // reseta counter
             }
         }
         

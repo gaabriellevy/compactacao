@@ -29,8 +29,8 @@ public class Compactacao {
 
         while(leitorEntrada.hasNextLine()) { // lê as linha do arquivo
             String linha = leitorEntrada.nextLine();
-            String linhaCompactada = compactador.frequenciaCaracteres(linha);
-            writer.write(linhaCompactada+"\n");
+            String linhaCompactada = compactador.frequenciaCaracteres(linha+'\n');
+            writer.write(linhaCompactada);
         }
         
         writer.close();
