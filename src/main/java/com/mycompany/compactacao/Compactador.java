@@ -24,9 +24,13 @@ public class Compactador {
                 ocorrencias = 1; // reseta counter
             } */
             else {
-                comprimido.append(ocorrencias);
-                comprimido.append(entrada.charAt(i));
-                ocorrencias = 1; // reseta counter
+                if (ocorrencias==1)
+                    comprimido.append(entrada.charAt(i));
+                else{
+                    comprimido.append(ocorrencias);
+                    comprimido.append(entrada.charAt(i));
+                    ocorrencias = 1; // reseta counter
+                }
             }
         }
         
