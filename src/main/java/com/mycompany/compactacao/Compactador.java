@@ -17,12 +17,17 @@ public class Compactador {
         for (int i = 0; i < entrada.length(); i++) {
             if (i < entrada.length() - 1 && entrada.charAt(i) == entrada.charAt(i + 1)) {
                 ocorrencias++;
-            }/*else if(entrada.charAt(i) == '\n') { // substituir \n por LP
-                comprimido.append(ocorrencias);
-                comprimido.append('L');
-                comprimido.append('P');
+            }else if(entrada.charAt(i) == '\n') { // substituir \n por -
+                if(ocorrencias>1)
+                    comprimido.append(ocorrencias);
+                comprimido.append('-');
                 ocorrencias = 1; // reseta counter
-            } */
+            }else if(entrada.charAt(i) == (char) 32) { // substituir espaco por _
+                if(ocorrencias>1)
+                    comprimido.append(ocorrencias);
+                comprimido.append('_');
+                ocorrencias = 1; // reseta counter
+            } 
             else {
                 if (ocorrencias==1)
                     comprimido.append(entrada.charAt(i));
